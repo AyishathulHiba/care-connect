@@ -122,11 +122,13 @@
       color: #fff;
       position: fixed;
       cursor: pointer;
-      left: 300px;
+      left: 250px;
       font-size: 20px;
       margin: 5px 0;
       transition: 0.5s;
+      top: 15px; /* Adjust the value to move it upwards */
     }
+
 
     label #sidebar_btn:hover {
       color: #19B3D3;
@@ -142,7 +144,7 @@
 
     #check:checked~.sidebar a {
       font-size: 20px;
-      margin-left: 170px;
+      margin-left: 150px;
       width: 80px;
     }
 
@@ -215,23 +217,32 @@
       <h6 style="color: rgb(255, 255, 255);">(Patient)</h6>
     </center>
     <ul>
-      <li tabindex="0" class="icon-dashboard"><a href="/patient-dashboard"><span>Dashboard</span></a></li>
-      <li tabindex="0" class="icon-users"><a href="/patient-appointment"><span>Appointments</span></a></li>
-      <li tabindex="0" class="icon-users"><a href="/patient-view-doctor"><span>Doctors</span></a></li>
-      <li tabindex="0" class="icon-calendar"><a href="/consultation-link-list/"><span>Consultation</span></a></li>
-      <li tabindex="0" class="icon-calendar"><a href="/prescriptions"><span>Prescription</span></a></li>
+      <a href="/patient-dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+      <a href="/patient-appointment"><i class="fas fa-chalkboard-teacher"></i><span>Appointments</span></a>
+      <a href="/patient-view-doctor"><i class="fas fa-book"></i><span>Doctors</span></a>
+      <a href="/consultation-link-list"><i class="fas fa-user-md"></i><span>Consultation</span> </a>
+      <li tabindex="0" class="icon-calendar">
+        <a href="/prescriptions">
+          <i class="fas fa-file-download"></i> <!-- Prescription Download Icon -->
+          <span>Prescription</span>
+        </a>
+      </li>
+      
+    
 
       <!-- Logout Link in Sidebar -->
       <li tabindex="0" class="icon-calendar">
-        <form id="logout_form_sidebar" action="/logout" method="POST" style="display: inline;">
+        <form id="logout_form" action="/logout" method="POST" style="display: inline;">
           {% csrf_token %}
-          <a href="#" class="logout_link" onclick="document.getElementById('logout_form_sidebar').submit(); return false;">
-            <span>Logout</span>
+          <a href="#" class="logout_link" onclick="document.getElementById('logout_form').submit(); return false;">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Logout</span>
           </a>
-        </form>
+      </form>
       </li>
     </ul>
   </div>
+  
 
   <main>
     <div class="content">

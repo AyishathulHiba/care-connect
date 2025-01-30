@@ -23,6 +23,9 @@ def home_view(request):
     return render(request,'hospital/index.html')
 
 
+def registers_view(request):
+    return render(request,'hospital/registers.html')
+
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -942,7 +945,7 @@ def upload_prescription(request):
 #     prescriptions = Prescription.objects.filter(patient=patient)
 #     print(prescriptions)
 #     return render(request, 'hospital/prescription_list.html', {'prescriptions': prescriptions})
-
+ 
 
 def prescription_list(request):
     try:

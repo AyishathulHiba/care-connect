@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  background-color:#9fe2ef;
+  background: linear-gradient(135deg, #385a93, #9ab9ec);
 }
 
 .page-wrapper {
@@ -155,7 +155,7 @@ body {
 .h-bg .h-bg-inner {
   width: 50%;
   height: 100%;
-  background-color: #464646;
+  background-color: #06631f;
 }
 
 .info-inner {
@@ -331,7 +331,7 @@ body {
                 <img class="img" src="{{p.product_image.url }}" alt="product pic" height="300px" width="300px">
                 <div class="img-info">
                   <div class="info-inner">
-                    <span style="background-color:#08050a; color:yellow;" class="p-company">{{p.name}}</span>
+                    <span style="background-color:#3935c1; color:rgb(235, 235, 235);" class="p-company">{{p.name}}</span>
 
                   </div>
                   <div class="a-size">{{p.description}}</div>
@@ -363,9 +363,6 @@ body {
 {% endif %}
 
   {% endfor %}
-</div>
-<!-- products data enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
-
 
 {%else%}
 <h3 style="text-align:center; color:yellow;">No Search Found</h3>

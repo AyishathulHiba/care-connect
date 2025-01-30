@@ -10,18 +10,6 @@
         padding: 0;
     }
 
-    .marquee {
-        display: block;
-        width: 100%;
-        background-color: #ffcccb;
-        color: #d32f2f;
-        font-weight: bold;
-        text-align: center;
-        padding: 10px 0;
-        margin: 0;
-        font-size: 16px;
-    }
-
     .container {
         margin-top: 30px;
         display: flex;
@@ -38,7 +26,7 @@
     }
 
     .panel-heading {
-        background-color: #4a90e2;
+        background-color: #1069cf;
         color: white;
         border-radius: 8px 8px 0 0;
         padding: 15px;
@@ -80,7 +68,7 @@
     }
 
     .form-control:focus {
-        border-color: #4a90e2;
+        border-color: #1069cf;
         box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
     }
 
@@ -123,7 +111,7 @@
     }
 
     .nav-pills .active a {
-        background-color: #4a90e2;
+        background-color: #1069cf;
         color: white;
     }
 
@@ -132,7 +120,7 @@
     }
 
     .btn-success {
-        background-color: #4a90e2;
+        background-color: #1069cf;
         border: none;
         font-size: 18px;
         padding: 15px;
@@ -148,11 +136,28 @@
         display: block;
         width: 100%;
     }
-</style>
 
-<marquee class="marquee" scrolldelay="50">ITS FAKE PAYMENT PAGE. WE DO NOT STORE YOUR DATA</marquee>
-<marquee class="marquee" scrolldelay="50">ITS JUST FOR DEMO</marquee>
-<br><br>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #4a90e2;
+        color: white;
+    }
+
+    table td {
+        background-color: #f9f9f9;
+    }
+</style>
 
 <div class="container">
     <div class="panel panel-default">
@@ -167,17 +172,22 @@
         </div>
         <div class="panel-body">
             <form role="form" method="post">
-                <div class="form-group">
-                    <label for="cardNumber">CARD NUMBER</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number" required autofocus />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 col-md-7">
-                        <div class="form-group">
-                            <label for="expityMonth">EXPIRY DATE</label>
+                <table>
+                    <tr>
+                        <th colspan="2">Credit Card Information</th>
+                    </tr>
+                    <tr>
+                        <td><label for="cardNumber">CARD NUMBER</label></td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number" required autofocus />
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="expityMonth">EXPIRY DATE</label></td>
+                        <td>
                             <div class="row">
                                 <div class="col-xs-6 pl-ziro">
                                     <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
@@ -186,15 +196,13 @@
                                     <input type="text" class="form-control" id="expityYear" placeholder="YY" required />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-5 col-md-5">
-                        <div class="form-group">
-                            <label for="cvCode">CV CODE</label>
-                            <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
-                        </div>
-                    </div>
-                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="cvCode">CV CODE</label></td>
+                        <td><input type="password" class="form-control" id="cvCode" placeholder="CV" required /></td>
+                    </tr>
+                </table>
             </form>
         </div>
         <ul class="nav nav-pills nav-stacked">

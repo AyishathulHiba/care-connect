@@ -4,23 +4,26 @@
 {% block content %}
 
 <style type="text/css">
-    body, html {
-        height: 100%;
+        body, html {
+        height: 100vh; /* Set the height to 100vh to ensure full screen coverage */
         margin: 0;
-        background-color: #f7f7f7;
+        background: #3a76e0; 
         font-family: Arial, sans-serif;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Horizontally center the content */
     }
 
     .form-container {
-        width: 100%;
-        max-width: 600px;
+        width: 200%;  /* Use full width */
+        max-width: 800px; /* Maintain the max-width */
         padding: 40px;
-        background-color: #fff;
+        background-color: white; /* Set background color to white */
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 0 auto; /* Center the container horizontally */
+        transform: translateX(-20%); /* Move the container slightly to the left */
     }
 
     .form-style-1 {
@@ -56,7 +59,7 @@
         border-radius: 5px;
         font-size: 14px;
         color: #555;
-        transition: border-color 0.3s ease;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .form-style-1 input[type="text"]:focus,
@@ -99,9 +102,9 @@
 
     .no-products-message {
         text-align: center;
-        margin-top: 50px;
+        margin-top: 10px;
         font-size: 24px;
-        color: #e74c3c;
+        color: #180f0e;
     }
 
     .no-products-message h1 {
@@ -136,7 +139,7 @@
         </form>
     {% else %}
         <div class="no-products-message">
-            <h1>First Add Product In Cart</h1>
+            <h1>Please Add Products In Your Cart</h1>
         </div>
     {% endif %}
 </div>

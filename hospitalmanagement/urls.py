@@ -13,8 +13,8 @@ from django.contrib.auth.views import LoginView,LogoutView
 #-------------FOR ADMIN RELATED URLS
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home_view,name=''),
-
+    path('',views.home_view,name='home'),
+  path('registers',views.registers_view,name="registers"),
 
     path('aboutus', views.aboutus_view),
     path('contactus', views.contactus_view),
