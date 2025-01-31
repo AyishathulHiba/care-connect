@@ -89,7 +89,7 @@ def pharmacy_home(request):
     productcount = models.Product.objects.all().count()
     ordercount = models.Orders.objects.all().count()
 
-    orders = models.Orders.objects.all()
+    orders = models.Orders.objects.all().order_by('-id')
     ordered_products = []
     ordered_bys = []
 
@@ -634,6 +634,8 @@ def doctor_dashboard_view(request):
         patientid.append(a.patientId)
     patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid).order_by('-id')
     appointments=zip(appointments,patients)
+    print(appointments)
+
     mydict={
     'patientcount':patientcount,
     'appointmentcount':appointmentcount,
@@ -1210,7 +1212,9 @@ def payment_success_view(request):
             status='Pending',
             email=email,
             mobile=mobile,
-            address=address
+            address=address,
+            patient=customer
+            
         )
 
     # Clear cookies after processing
@@ -1225,11 +1229,14 @@ def payment_success_view(request):
 
 def my_order_view(request):
     customer=models.Patient.objects.get(user_id=request.user.id)
-    orders=models.Orders.objects.all().filter(patient_id = customer)
+    orders=models.Orders.objects.filter(patient_id = customer)
+    print(customer,'cs')
+    print(orders,'orders')
     ordered_products=[]
     for order in orders:
         ordered_product=models.Product.objects.all().filter(id=order.product.id)
         ordered_products.append(ordered_product)
+        print(ordered_product)
 
     return render(request,'hospital/my_order.html',{'data':zip(ordered_products,orders)})
 

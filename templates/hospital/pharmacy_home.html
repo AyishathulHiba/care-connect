@@ -26,8 +26,8 @@
             <tbody>
                 {% for product, customer, order in data %}
                 <tr>
-                    <td>{{ customer.get_name }}</td>
-                    <td>{{ customer.mobile }}</td>
+                    <td>{{ order.patient.user.username }}</td>
+                    <td>{{ order.patient.mobile }}</td>
                     <td>{{ order.address }}</td>
                     <td>{{ product.name }}</td>
                     <td><img src="{% static product.product_image.url %}" alt="Item Picture" height="40px" width="40px" /></td>

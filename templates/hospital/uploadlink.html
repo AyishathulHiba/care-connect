@@ -75,7 +75,7 @@ label {
             <h3>Upload Consultation Link</h3>
         </div>
         <div class="card-body">
-            <form method="post">
+            <form method="post" id="consultation-form">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="patient">Patient:</label>
@@ -98,4 +98,18 @@ label {
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("consultation-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        var form = this;
+
+        // Simulate form submission delay
+        setTimeout(function() {
+            alert("Consultation link uploaded successfully!");
+            form.submit(); // Submit the form after showing alert
+        }, 200);
+    });
+</script>
+
 {% endblock %}
